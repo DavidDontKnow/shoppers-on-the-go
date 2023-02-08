@@ -1,6 +1,6 @@
+
 // Waits to load DOM
 $(function () {
-
 
     $("#submit").click(function (e) {
         let input = $("input")
@@ -9,7 +9,11 @@ $(function () {
         console.log(searchRequest)
     })
 
-
+function displayResponse(response) {
+    const responseContainer = document.querySelector('#response-container');
+    responseContainer.textContent = response;
+  }
+  
 
 
 
@@ -105,3 +109,4 @@ $(function () {
 
 
 })
+
