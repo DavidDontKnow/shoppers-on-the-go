@@ -7,13 +7,31 @@ $(function () {
         e.preventDefault();
         let searchRequest = input.val()
         console.log(searchRequest)
+        getLocation()
     })
 
-function displayResponse(response) {
-    const responseContainer = document.querySelector('#response-container');
-    responseContainer.textContent = response;
-  }
-  
+    function displayResponse(response) {
+        const responseContainer = document.querySelector('#response-container');
+        responseContainer.textContent = response;
+    }
+
+    // get user location 
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(storePosition);
+        } else if (navigator.geolocation == "") {
+            // replace this with error Modal
+            alert("Geolocation is not supported by this browser.");
+            setTimeout(location.reload(), 5000)
+
+        }
+    }
+
+    function storePosition(position) {
+        var lat = position.coords.latitude;
+        var lon = position.coords.longitude;
+        console.log(lat, lon)
+    }
 
 
 
