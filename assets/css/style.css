@@ -2,4 +2,17 @@
 
 h1 {
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-} 
+}
+ 
+#searchBar {
+	width: 250px;
+	border-radius: 10px;
+}
+
+.input {
+	left: 925px;
+}
+
+.button {left: 925px;
+         margin-bottom: 10px;
+}
