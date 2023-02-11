@@ -1,5 +1,21 @@
 
 // Waits to load DOM
+
+var placesService;
+var request = {
+    query: 'Museum of Contemporary Art Australia',
+    fields: ['name', 'geometry'],
+
+};
+
+// var mapEL
+
+function initMap() {
+
+    var map = new google.maps.Map(document.createElement("div"))
+    placesService = new google.maps.places.PlacesService(map);
+}
+
 $(function () {
 
     $("#submit").click(function (e) {
@@ -31,7 +47,10 @@ $(function () {
         var lat = position.coords.latitude;
         var lon = position.coords.longitude;
         console.log(lat, lon)
+
     }
+
+
 
 
 
