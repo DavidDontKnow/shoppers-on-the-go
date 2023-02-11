@@ -33,9 +33,35 @@ $(function () {
         console.log(lat, lon)
     }
 
-
-
-
+//get recipe info
+    
+    const appId = "ab033eef";
+    const appKey = "0949c8863c9896ad2df59beb0142e2bc";
+    
+    $(document).ready(function() {
+      $("#submit").click(function() {
+          var searchTerm = $("#search-input").val();
+          console.log(searchTerm)
+          if (searchTerm) {
+            var proxy = "https://cors-anywhere.herokuapp.com/";
+            var apiUrl = "https://api.edamam.com/search?q=" + searchTerm + "&app_id=" + appId + "&app_key=" + appKey;
+            
+            $.ajax({
+                url: proxy + apiUrl,
+                method: "GET",
+                success: function(data) {
+                    console.log(data);
+                    // process the data to display the recipes information
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            });
+          } else {
+            console.error("No search term entered");
+          }
+      });
+    });
 
 
 
