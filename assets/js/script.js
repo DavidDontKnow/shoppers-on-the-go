@@ -34,7 +34,7 @@ $(function () {
     }
 
 //get recipe info
-    
+//NOTE: Must first request temporary access from the demo server-- see console to gain access
     const appId = "ab033eef";
     const appKey = "0949c8863c9896ad2df59beb0142e2bc";
     
@@ -62,8 +62,20 @@ $(function () {
           }
       });
     });
+//get recipe image
+    const recipeImg = document.getElementById('recipe-img');
+    const searchButton = document.getElementById('search-button');
 
-
+    
+    searchButton.addEventListener('click', async () => {
+        const searchInput = document.getElementById('search-input').value;
+        const response = await fetch(`https://api.edamam.com/search?q=${searchInput}&app_id=${appId}&app_key=${appKey}`);
+        const data = await response.json();
+        const recipe = data.hits[0].recipe;
+        recipeImg.src = recipe.image;
+        recipeImg.alt = recipe.label;
+        searchButton.innerHTML = `<a href="${recipe.url}" target="_blank">View Recipe</a>`;
+      });
 
 
 
