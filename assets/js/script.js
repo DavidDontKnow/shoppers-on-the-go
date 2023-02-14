@@ -37,6 +37,7 @@ function displayGroceryStores(stores) {
         var store = stores[i];
         var li = document.createElement("li");
         li.innerHTML = store.name + " - " + store.vicinity;
+        li.setAttribute("class", "has-text-centered py-2")
         list.appendChild(li);
     }
 }
