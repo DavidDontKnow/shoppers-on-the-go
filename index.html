@@ -21,7 +21,6 @@
 	</header>
 
 	<main>
-
 		<section>
 			<figure class="image is-128x128">
 				<img id="recipe-img" src="#" alt="Image of Recipe">
@@ -41,6 +40,32 @@
 				<!-- Placeholder for nearby stores -->
 			</ul>
 		</div>
+
+		<!-- heroku modal -->
+		<section id="modals">
+			<div id="heroku-modal" class="modal is-active">
+				<div class="modal-background"></div>
+				<div class="modal-content">
+					<div class="box">
+						<p>Please be sure to request temporary access from the following link:</p>
+						<a href="http://#" target="_blank" rel="noopener noreferrer">Heroku Page</a>
+					</div>
+				</div>
+				<button class="modal-close is-large" aria-label="close"></button>
+			</div>
+
+			<!-- no search item modal -->
+			<div id="no-input-modal" class="modal">
+				<div class="modal-background"></div>
+				<div class="modal-content">
+					<div class="box">
+						<p>Please be sure to input a food you want to make</p>
+						<p>(i.e. Tacos)</p>
+					</div>
+				</div>
+				<button class="modal-close is-large" aria-label="close"></button>
+			</div>
+		</section>
 	</main>
 
 	<footer class="has-background-primary">
@@ -50,10 +75,9 @@
 
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script src="./assets/js/script.js"></script>
-	<script async
+	<!-- <script async
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdt6iOvJ4whxSEL93JkhiGmWEieKD36Co&libraries=places&callback=initMap">
-		</script>
-
+		</script> -->
 </body>
 
 </html>
