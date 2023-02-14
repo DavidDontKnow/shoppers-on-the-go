@@ -43,15 +43,18 @@
 // }
 
 $(function () {
+
+  showPrevious()
+
   //get recipe info
   //NOTE: Must first request temporary access from the demo server-- see console to gain access
   const appId = "ab033eef";
   const appKey = "0949c8863c9896ad2df59beb0142e2bc";
-
+  // search event listener
   $(document).ready(function () {
     $("#submit").click(function () {
       var searchTerm = $("#search-input").val();
-      console.log(searchTerm);
+
       if (searchTerm) {
         var proxy = "https://cors-anywhere.herokuapp.com/";
         var apiUrl =
@@ -69,12 +72,14 @@ $(function () {
             console.log(data);
             // process the data to display the recipes information
             displayInfo(data);
+            window.localStorage.setItem("lastSearch", JSON.stringify(data))
           },
           error: function (error) {
             console.log(error);
           },
         });
       } else {
+        // adds class to display error modal
         console.error("No search term entered");
         var noInput = $("#no-input-modal")
         noInput.attr("class", "is-active")
@@ -111,14 +116,20 @@ $(function () {
 
 
   $(".modal-close").click(function (e) {
-    console.log(e.target)
     var modal = $(e.target).parent();
     modal.removeAttr("class")
     modal.attr("class", "modal")
   })
 
 
-
+  function showPrevious() {
+    if (window.localStorage.getItem("lastSearch") === null) {
+      return
+    } else {
+      var data = JSON.parse(window.localStorage.getItem("lastSearch"))
+      displayInfo(data)
+    }
+  }
 
 
 
