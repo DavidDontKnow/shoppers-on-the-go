@@ -19,6 +19,7 @@ function initMap() {
           var groceryStores = [];
           for (var i = 0; i < results.length; i++) {
             groceryStores.push(results[i]);
+            window.localStorage.setItem("stores", JSON.stringify(groceryStores))
           }
           console.log(groceryStores)
           // pass to function to append to html 
@@ -45,6 +46,8 @@ function displayGroceryStores(stores) {
 $(function () {
   // loads previous recipe ingredients list
   showPrevious()
+  // loads last nearby stores
+  loadStores()
 
   //get recipe info
   //NOTE: Must first request temporary access from the demo server-- see console to gain access
@@ -83,7 +86,7 @@ $(function () {
         // adds class to display error modal
         console.error("No search term entered");
         var noInput = $("#no-input-modal")
-        noInput.attr("class", "is-active")
+        noInput.addClass("is-active")
       }
     });
   });
@@ -132,5 +135,12 @@ $(function () {
     }
   }
 
-
+  function loadStores() {
+    if (window.localStorage.getItem("stores") === null) {
+      return
+    } else {
+      var stores = JSON.parse(window.localStorage.getItem("stores"))
+      displayGroceryStores(stores)
+    }
+  }
 });

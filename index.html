@@ -6,14 +6,44 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title> Shoppers on the Go</title>
+	<link rel="shortcut icon" href="./assets/img/recipe-book.ico" type="image/x-icon">
 	<link rel="stylesheet" href="./assets/css/style.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
 </head>
 
 <body>
+	<!-- section containing all modals -->
+	<section id="alert">
+		<!-- no search item modal -->
+		<div id="no-input-modal" class="modal is-clipped ">
+			<div class="modal-background"></div>
+			<div class="modal-content">
+				<div class="box">
+					<p>Please be sure to input a food you want to make</p>
+				</div>
+			</div>
+			<button class="modal-close is-large" aria-label="close"></button>
+		</div>
+	</section>
+	<!-- heroku modal -->
+	<div id="heroku-modal" class="modal is-clipped is-active">
+		<div class="modal-background"></div>
+		<div class="modal-content">
+			<div class="box">
+				<p>Please be sure to request temporary access from the following link:</p>
+				<a href=" https://cors-anywhere.herokuapp.com/" target="_blank" rel="noopener noreferrer">Heroku
+					Page</a>
+			</div>
+		</div>
+		<button class="modal-close is-large" aria-label="close"></button>
+	</div>
+	</section>
+
+	<!-- Header -->
 	<header class="container-fluid">
 		<section class="hero is-large is-primary">
 			<h1 class='title is-1'>Shoppers on the go!<h1>
+					<!-- search btn and submit button -->
 					<input id="search-input" class="input is-round is-warning is-small is-outlined" type="text"
 						placeholder="Search...">
 					<button type="submit" id="submit" class="button is-success is-light is-outlined">Search</button>
@@ -21,6 +51,7 @@
 	</header>
 
 	<main>
+		<!-- recipe img and link-->
 		<section>
 			<figure class="image is-128x128">
 				<img id="recipe-img" src="#" alt="Image of Recipe">
@@ -28,47 +59,21 @@
 			<button id="search-button" type="button" class="button is-success is-light is-outlined">Click to View
 				Recipe</button>
 		</section>
-
+		<!-- ingredients list -->
 		<div>
 			<ul class="colums" id="food">
+				<!-- ingredients place holder  -->
 			</ul>
 		</div>
-
+		<!-- nearby stores -->
 		<div id="nearby" class="mb-2">
 			<h2 class="title is-2 has-text-centered">Nearby Stores</h2>
 			<ul id="store-list">
 				<!-- Placeholder for nearby stores -->
 			</ul>
 		</div>
-
-		<!-- heroku modal -->
-		<section id="modals">
-			<div id="heroku-modal" class="modal is-active">
-				<div class="modal-background"></div>
-				<div class="modal-content">
-					<div class="box">
-						<p>Please be sure to request temporary access from the following link:</p>
-						<a href=" https://cors-anywhere.herokuapp.com/" target="_blank" rel="noopener noreferrer">Heroku
-							Page</a>
-					</div>
-				</div>
-				<button class="modal-close is-large" aria-label="close"></button>
-			</div>
-
-			<!-- no search item modal -->
-			<div id="no-input-modal" class="modal">
-				<div class="modal-background"></div>
-				<div class="modal-content">
-					<div class="box">
-						<p>Please be sure to input a food you want to make</p>
-						<p>(i.e. Tacos)</p>
-					</div>
-				</div>
-				<button class="modal-close is-large" aria-label="close"></button>
-			</div>
-		</section>
 	</main>
-
+	<!-- footer -->
 	<footer class="has-background-primary">
 		<p class="is-uppercase	has-text-weight-light has-text-right pr-4">Copyright &copy; 2023</p>
 	</footer>
@@ -76,6 +81,7 @@
 
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script src="./assets/js/script.js"></script>
+	<!-- places api script -->
 	<script async
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdt6iOvJ4whxSEL93JkhiGmWEieKD36Co&libraries=places&callback=initMap">
 		</script>
