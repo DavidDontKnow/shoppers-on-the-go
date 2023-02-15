@@ -2,7 +2,7 @@
 
 ## Description
 
-- A simple recipe retrieval application that allows a user to discover new recipes, as well as the ingredient list required per recipe, and nearby grocery stores. This app runs in the browser and features dynamically updated HTML and CSS powered by jQuery, as well as the Bulma Framework.
+- A simple recipe retrieval application that allows a user to discover new recipes, as well as the ingredient list required per recipe, and nearby grocery stores. This app runs in the browser and features dynamically updated HTML and CSS powered by jQuery, as well as the Bulma Framework. Api's used: Recipe APIEdamam Recipe Search , Grocery Store List API: Google Places 
 ## Installation
 
 - N/A we don’t have any steps to take to install anything for our webpage.

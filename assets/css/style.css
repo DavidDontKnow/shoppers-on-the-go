@@ -33,6 +33,7 @@ h1 {
 }
 
 #recipe-img {
-	height: 300px;
+	height: auto;
+width: 500px
 }
 	
