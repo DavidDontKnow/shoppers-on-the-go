@@ -115,7 +115,7 @@ $(function () {
     for (let i = 0; i < ingredientsList.length; i++) {
       var li = document.createElement("li");
       li.textContent = ingredientsList[i];
-      li.classList.add('colum');
+      li.setAttribute("class", "has-text-centered py-1")
       food.append(li);
     }
   }

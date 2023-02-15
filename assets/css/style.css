@@ -23,12 +23,10 @@ h1 {
 }
 
 #food {
-	margin-top: 200px;
-	border-width: 800px;
 	background-color: rgb(47, 250, 206);
+	padding-bottom: 1.5rem;
 }
 
 #nearby {
-	margin-top: 200px;
-
+	margin-top: 2rem;
 }
